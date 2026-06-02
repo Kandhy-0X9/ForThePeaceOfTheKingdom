@@ -1,4 +1,4 @@
-sophomore Game Jam - "Better Tomorrow"
+# sophomore Game Jam - "A Better Tomorrow"
 
 Ideas "For The Peace of the Kingdom"
     - give your people a better tomorrow.
