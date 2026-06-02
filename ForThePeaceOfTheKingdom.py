@@ -30,7 +30,7 @@ def pause(seconds=1.5):
 
 def loadingAnimation():
     frames = ["_ _ _ _ _", "▌ _ _ _ _", "▌ ▌ _ _ _", "▌ ▌ ▌ _ _", "▌ ▌ ▌ ▌ _", "▌ ▌ ▌ ▌ ▌"]
-    for i in range(2):
+    for _ in range(2):
         for frame in frames:
             clearTerminal()
             print(f"\n\n          {frame}\n")
