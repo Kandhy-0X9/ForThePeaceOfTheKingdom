@@ -45,5 +45,6 @@ class Alliance:
         self.__military = military 
 
 loadingAnimation()
+typing("--INTRO--")
 typing("\nThere once was a kingdom who was ruled by a fairly new, young boy who lacked experience with leadership.")
 typing("\nAs this kingdom settled upon its new ruler, a kingdom nearby was falling apart and was falling into ruins.")
