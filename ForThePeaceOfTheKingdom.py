@@ -180,53 +180,53 @@ RANDOM_EVENTS = [
         "name": "Noble's Grand Feast",
         "desc": "A powerful noble requests you fund a lavish feast to celebrate his son's wedding.",
         "choices": [
-            ("Fund the feast (-300 gold, +15 noble favour, -10 reputation)", -300, 0,  15, -10),
-            ("Decline politely (no cost, -10 noble favour)",                   0,  0, -10,   0),
+            ("Fund the feast (-300 gold, +15 noble favour, -10 reputation)", -300, 0,  15, -10, 0),
+            ("Decline politely (no cost, -10 noble favour)",                   0,  0, -10,   0, 0),
         ]
     },
     {
         "name": "Bandit Raid",
         "desc": "Bandits have attacked merchant caravans on the eastern road!",
         "choices": [
-            ("Send knights to clear them (-5 knights, +10 reputation)",         0, -5,  0,  10),
-            ("Offer gold bounty (-200 gold, +5 reputation)",                  -200,  0,  0,   5),
-            ("Ignore it (-15 reputation, -100 from lost trade)",              -100,  0,  0, -15),
+            ("Send knights to clear them (-5 knights, +10 reputation)",          0, -5,  0,  10, 0),
+            ("Offer gold bounty (-200 gold, +5 reputation)",                  -200,  0,  0,   5, 0),
+            ("Ignore it (-15 reputation, -100 from lost trade)",              -100,  0,  0, -15, 0),
         ]
     },
     {
         "name": "Monster Attack",
         "desc": "A creature from the deep forest terrorises outlying villages!",
         "choices": [
-            ("Send elite knights (-8 knights, +20 reputation)",                 0, -8,  0,  20),
-            ("Hire mercenaries (-400 gold, +10 reputation)",                 -400,  0,  0,  10),
-            ("Evacuate villagers (-50 gold, -5 reputation, saves lives)",     -50,  0,  0,  -5),
+            ("Send elite knights (-8 knights, +20 reputation)",                 0, -8,  0,  20, 0),
+            ("Hire mercenaries (-400 gold, +10 reputation)",                 -400,  0,  0,  10, 0),
+            ("Evacuate villagers (-50 gold, -5 reputation, saves lives)",     -50,  0,  0,  -5, 0),
         ]
     },
     {
         "name": "Plague Scare",
         "desc": "Rumours of sickness spread through the lower districts.",
         "choices": [
-            ("Fund healers (-350 gold, prevents population loss, +10 rep)",  -350,  0,  0,  10),
-            ("Quarantine district (-10 population, +5 reputation)",             0,  0,  0,   5),
-            ("Do nothing (-50 population, -20 reputation)",                     0,  0,  0, -20),
+            ("Fund healers (-350 gold, prevents population loss, +10 rep)",  -350,  0,  0,  10, 0),
+            ("Quarantine district (-10 population, +5 reputation)",           0,  0,  0,   5, -10),
+            ("Do nothing (-50 population, -20 reputation)",                     0,  0,  0, -20, 0),
         ]
     },
     {
         "name": "Harvest Festival",
         "desc": "Your people request a harvest festival to lift spirits.",
         "choices": [
-            ("Sponsor the festival (-200 gold, +20 reputation)",             -200,  0,  0,  20),
-            ("Allow it, no funds (-50 gold, +5 reputation)",                  -50,  0,  0,   5),
-            ("Cancel it (saves gold, -15 reputation)",                          0,  0,  0, -15),
+            ("Sponsor the festival (-200 gold, +20 reputation)",             -200,  0,  0,  20, 0),
+            ("Allow it, no funds (free, +5 reputation)",                        0,  0,  0,   5, 0),
+            ("Cancel it (saves gold, -15 reputation)",                          0,  0,  0, -15, 0),
         ]
     },
     {
         "name": "Drought",
         "desc": "A dry summer threatens the food supply.",
         "choices": [
-            ("Import grain (-300 gold, no population loss)",                 -300,  0,  0,   0),
-            ("Ration food (-10 reputation, saves gold)",                        0,  0,  0, -10),
-            ("Do nothing (-30 population, -10 reputation)",                     0,  0,  0, -10),
+            ("Import grain (-300 gold, no population loss)",                 -300,  0,  0,   0, 0),
+            ("Ration food (-10 reputation, saves gold)",                        0,  0,  0, -10, 0),
+            ("Do nothing (-30 population, -10 reputation)",                   0,  0,  0, -10, -30),
         ]
     },
 ]
@@ -237,17 +237,17 @@ def trigger_random_event(kingdom):
     header(f"⚡  RANDOM EVENT: {event['name']}")
     typing(f"\n  {event['desc']}\n")
     pause(0.5)
-    print("What will you do?\n")
+    print("  What will you do?\n")
 
     labels = [c[0] for c in event["choices"]]
     idx = choose(labels)
-    _, gold, knights, noble, rep, popultion = event["choices"][idx]
+    _, gold, knights, noble, rep, population = event["choices"][idx]
 
-    kingdom.money = max(0, kingdom.money + gold)
-    kingdom.knights = max(0, kingdom.knights + knights)
+    kingdom.money = max(0,   kingdom.money       + gold)
+    kingdom.knights = max(0,   kingdom.knights     + knights)
     kingdom.noble_favor = max(0, min(100, kingdom.noble_favor + noble))
     kingdom.reputation = max(0, min(100, kingdom.reputation  + rep))
-    kingdom.population = max(0, kingdom.population + popultion)
+    kingdom.population = max(0,   kingdom.population  + population)
 
     typing("\n  Decision made. For The Peace of The Kingdom...")
     pause(1)
