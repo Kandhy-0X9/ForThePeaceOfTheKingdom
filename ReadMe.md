@@ -1,9 +1,9 @@
 # sophomore Game Jam - "A Better Tomorrow"
 
-Ideas "For The Peace of the Kingdom"
+## Ideas "For The Peace of the Kingdom"
     - give your people a better tomorrow.
 
-Things to add
+## Things to add
     - Taxes
     - More Money
     - Military
@@ -19,7 +19,7 @@ Things to add
     - Storyline
     - Distractions for the user to throw money on ex. parties
 
---Story--
+## --Story--
 A young king/queen who needs to manage a king his father left behind for him.
 He also need to protect his people from a neighboring kingdom that wants to take over it.
 He has to become rich, make allliances, win the favor of the people and nobles, make trades, and keep expanding.

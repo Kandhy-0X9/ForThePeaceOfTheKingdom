@@ -241,12 +241,13 @@ def trigger_random_event(kingdom):
 
     labels = [c[0] for c in event["choices"]]
     idx = choose(labels)
-    _, gold, knights, noble, rep = event["choices"][idx]
+    _, gold, knights, noble, rep, popultion = event["choices"][idx]
 
     kingdom.money = max(0, kingdom.money + gold)
     kingdom.knights = max(0, kingdom.knights + knights)
     kingdom.noble_favor = max(0, min(100, kingdom.noble_favor + noble))
     kingdom.reputation = max(0, min(100, kingdom.reputation  + rep))
+    kingdom.population = max(0, kingdom.population + popultion)
 
     typing("\n  Decision made. For The Peace of The Kingdom...")
     pause(1)
@@ -256,13 +257,13 @@ def intro(k):
     loadingAnimation()
     slow_typing(f"What will you be known as (King... or Queen...)?")
     k.title = input("  Title (King/Queen): ").strip().capitalize() or "Ruler"
-    k.name  = input("  Name: ").strip() or "Unknown"
+    k.name = input("  Name: ").strip() or "Unknown"
     loadingAnimation()
 
     clearTerminal()
-    border("‡")
+    border("Ξ")
     print("  -- PROLOGUE --")
-    border()
+    border("Ξ")
     pause(0.5)
 
     slow_typing(f"\n  There once was a kingdom ruled by a fairly new sovereign — {k.title} {k.name}.")
