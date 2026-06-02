@@ -20,7 +20,7 @@
     - Distractions for the user to throw money on ex. parties
 
 ## --Story--
-A young king/queen who needs to manage a king his father left behind for him.
-He also need to protect his people from a neighboring kingdom that wants to take over it.
-He has to become rich, make allliances, win the favor of the people and nobles, make trades, and keep expanding.
-And in two years time he will face his enemy, will he be prepared or will he perish.
+    A young king/queen who needs to manage a king his father left behind for him.
+    He also need to protect his people from a neighboring kingdom that wants to take over it.
+    He has to become rich, make allliances, win the favor of the people and nobles, make trades, and keep expanding.
+    And in two years time he will face his enemy, will he be prepared or will he perish.
