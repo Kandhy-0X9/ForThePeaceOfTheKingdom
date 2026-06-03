@@ -126,7 +126,7 @@ class Kingdom:
 
     @property
     def turn_label(self):
-        return f"Year {self.year}, {self.season_name}"
+        return f"Year {self.season_name}, {self.year},"
 
     def tick(self):# Advance one season.
         # Income
@@ -259,7 +259,7 @@ def trigger_random_event(kingdom):
 
 def show_status(k):
     clearTerminal()
-    header(f"  ♚  {k.title} {k.name}'s Kingdom  —  {k.turn_label}")
+    header(f"  ♚  {k.turn_label} of {k.title} {k.name}")
     print(f"  💰  Treasury  :  {k.money:,} gold")
     print(f"  👥  Population:  {k.population:,}")
     print(f"  ⚔   Military  :  {k.knights} knights  (+{sum(a.military_support for a in k.alliances)} allied)")
@@ -479,7 +479,7 @@ def final_battle(k):
 def intro(k):
     loadingAnimation()
     slow_typing(f"What will you be known as (King... or Queen...)?")
-    k.title = input("  Title (King/Queen): ").strip().capitalize() or "Ruler"
+    k.title = input("  Title (King/Queen/Other title): ").strip().capitalize() or "Ruler"
     k.name  = input("  Name: ").strip() or "Unknown"
     loadingAnimation()
 
