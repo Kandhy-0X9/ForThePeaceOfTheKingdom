@@ -402,7 +402,7 @@ def end_of_season_report(k, net, tax_income, trade_income, knight_cost):
     print(f"    Tax revenue  : +{tax_income} gold")
     print(f"    Trade income : +{trade_income} gold")
     print(f"  Expenses")
-    print(f"    Army upkeep  : −{knight_cost} gold")
+    print(f"    Army upkeep  : -{knight_cost} gold")
     print(f"  ─────────────────────────")
     sign = "+" if net >= 0 else ""
     print(f"    Net          : {sign}{net} gold")
