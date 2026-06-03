@@ -1,9 +1,13 @@
 # sophomore Game Jam - "A Better Tomorrow"
+
 ---
 
 ## Ideas "For The Peace of the Kingdom"
 
-    - give your people a better tomorrow.
+    Give your people a better tomorrow.
+    
+    - "For the peace of the kingdom" is a powerful, classic phrase often used in literature, historical dramas, and fantasy worldbuilding.
+    - It typically serves as a rallying cry, a justification for difficult political decisions, or a noble vow taken by knights and rulers.
 
 ---
 
