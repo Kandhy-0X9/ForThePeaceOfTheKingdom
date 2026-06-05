@@ -126,7 +126,7 @@ class Kingdom:
 
     @property
     def turn_label(self):
-        return f"Year {self.season_name}, {self.year},"
+        return f"{self.season_name} of Year {self.year}"
 
     def tick(self):# Advance one season.
         # Income
