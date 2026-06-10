@@ -179,7 +179,7 @@ class Kingdom:
 # Event System
 
 RANDOM_EVENTS = [
-    {
+    { 
         "name": "Noble's Grand Feast",
         "desc": "A powerful noble requests you fund a lavish feast to celebrate his son's wedding.",
         "choices": [
@@ -187,7 +187,7 @@ RANDOM_EVENTS = [
             ("Decline politely (no cost, -10 noble favour)",                   0,  0, -10,   0, 0),
         ]
     },
-    {
+    { 
         "name": "Bandit Raid",
         "desc": "Bandits have attacked merchant caravans on the eastern road!",
         "choices": [
@@ -196,7 +196,7 @@ RANDOM_EVENTS = [
             ("Ignore it (-15 reputation, -100 from lost trade)",              -100,  0,  0, -15, 0),
         ]
     },
-    {
+    { 
         "name": "Monster Attack",
         "desc": "A creature from the deep forest terrorises outlying villages!",
         "choices": [
@@ -205,7 +205,7 @@ RANDOM_EVENTS = [
             ("Evacuate villagers (-50 gold, -5 reputation, saves lives)",     -50,  0,  0,  -5, 0),
         ]
     },
-    {
+    { 
         "name": "Plague Scare",
         "desc": "Rumours of sickness spread through the lower districts.",
         "choices": [
@@ -214,7 +214,7 @@ RANDOM_EVENTS = [
             ("Do nothing (-50 population, -20 reputation)",                     0,  0,  0, -20, 0),
         ]
     },
-    {
+    { 
         "name": "Harvest Festival",
         "desc": "Your people request a harvest festival to lift spirits.",
         "choices": [
@@ -223,7 +223,7 @@ RANDOM_EVENTS = [
             ("Cancel it (saves gold, -15 reputation)",                          0,  0,  0, -15, 0),
         ]
     },
-    {
+    { 
         "name": "Drought",
         "desc": "A dry summer threatens the food supply.",
         "choices": [
@@ -232,6 +232,24 @@ RANDOM_EVENTS = [
             ("Do nothing (-30 population, -10 reputation)",                   0,  0,  0, -10, -30),
         ]
     },
+    { 
+        "name": "Flood",
+        "desc": "A flood has breached a hole in the wall... The kingdom takes a serious hit!",
+        "choices": [
+            ("Repair the damages (-500 gold, no population loss)",           -500,  0,  0,   0, ),
+            ("Seek temporary refuge (-10 population, -10 noble favor)",        0, -10, 0, 0, -10),
+            ("Do nothing. (-20 population, -20 reputation, +20 noble favor)", 0, 0, 20, -20, -20),
+        ]
+    },
+    {
+        "name": "Invasion",
+        "desc": "A group of dwarves invaded attacked your lower cities",
+        "choices":[
+            ("send your knights (-5 knights, +10 reputation)",                0, -5, 0, +10, 0),
+            ("Pay the dwarves ransom (-300 gold, +20 reputation)",          -300, 0, 0, +20, 0),
+            ("Hire mercenaries (-500 gold, +20 population, +2 knights)",     -500, 2, 0, 0, 20),
+        ]
+    }
 ]
 
 def trigger_random_event(kingdom):
@@ -434,7 +452,7 @@ def final_battle(k):
     if margin >= 50:
         outcome = "DECISIVE VICTORY"
         msg = [
-            f"  Your armies crush Vorreth's forces!",
+            f"  Your armies crush Vorreth's forces on the battle field!",
             f"  {k.name} is hailed as the greatest ruler in a generation.",
             f"  The kingdom prospers. Peace reigns.",
         ]
@@ -457,7 +475,7 @@ def final_battle(k):
         msg = [
             f"  Vorreth's armies overrun your defences.",
             f"  {k.name} is executed and his head is hang on a battlement.",
-            f"  The realm you knew is no more.",
+            f"  The kingdom you knew is no more.",
         ]
 
     border("═")
