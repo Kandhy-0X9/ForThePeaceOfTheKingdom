@@ -522,8 +522,7 @@ def intro(k):
     slow_typing("  Win the hearts of your people — and pray your knights hold fast.")
     pause(1)
     slow_typing(f"\n  The kingdom awaits for you, {k.title} {k.name}.")
-    slow_typing(f"  Oh one last thing...")
-    slow_typing("   There's a chance that a random event might occur in your kingdom.")
+    slow_typing(f"For The Peace Of The Kingdom...")
     pause(0.8)
     press_enter()
 
