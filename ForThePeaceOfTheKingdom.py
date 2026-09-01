@@ -496,7 +496,7 @@ def final_battle(k):
 
 def intro(k):
     loadingAnimation()
-    slow_typing(f"What will you be known as (King... or Queen...)?")
+    slow_typing(f"What will you be known as")
     k.title = input("  Title (King/Queen/Other title): ").strip().capitalize() or "Ruler"
     k.name  = input("  Name: ").strip() or "Unknown"
     loadingAnimation()
