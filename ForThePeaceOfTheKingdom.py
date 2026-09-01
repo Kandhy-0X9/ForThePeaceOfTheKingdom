@@ -141,6 +141,13 @@ class Kingdom:
         net = total_income - total_expenses
         self.money += net
 
+        if self.noble_favor >= 80:
+            self.maintenance -= 1
+        elif self.noble_favor >= 10:
+            self.maintenance -= 0
+        else:
+            self.maintenance += 1
+            
         # Population growth / decline based on reputation
         if self.reputation >= 70:
             growth = random.randint(5, 20)
@@ -148,6 +155,7 @@ class Kingdom:
             growth = random.randint(-5, 10)
         else:
             growth = random.randint(-20, -2)
+        
         self.population = max(0, self.population + growth)
 
         # Military = 10 % of population (but player can train more; floor at natural draft)
